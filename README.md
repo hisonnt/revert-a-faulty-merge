@@ -22,3 +22,23 @@ Khi kiểm tra, chúng tôi phát hiện rằng các thay đổi mã nguồn đ�
 * * Commit 1d
 * Commit 2
 * Commit 3
+
+
+Lịch sử ngay sau "hoàn nguyên hợp nhất" sẽ trông như sau:
+
+---o---o---o---M---x---x---W
+               /
+       ---A---B (feat/wav-1)
+
+Sau khi các nhà phát triển của nhánh phụ (feat/wav-1) sửa chữa lỗi của họ, lịch sử có thể trông như sau:
+
+
+---o---o---o---M---x---x---W---x--------M2 (main)
+               /                       /
+       ---A---B-------------------C---D (feat/wav-1)
+
+Việc "hoàn nguyên" một commit thường chỉ đơn giản là làm ngược lại những gì commit đó đã làm, và khá đơn giản. Nhưng việc "hoàn nguyên" một commit hợp nhất cũng làm ngược lại dữ liệu mà commit đó đã thay đổi, nhưng nó không làm gì cả với lịch sử mà commit hợp nhất đã có.
+
+Vì vậy, hợp nhất vẫn tồn tại, và nó vẫn được coi là sự kết hợp giữa hai nhánh, và các hợp nhất sau này vẫn nhìn thấy hợp nhất đó như là trạng thái chia sẻ cuối cùng - và hoàn nguyên đưa vào sẽ không ảnh hưởng gì cả.
+
+Vì vậy, một "hoàn nguyên" hoàn nguyên lại những thay đổi dữ liệu, nhưng nó không phải là một "phục hồi" theo cách nó không hoàn nguyên tác động của một commit lên lịch sử kho chứa.
