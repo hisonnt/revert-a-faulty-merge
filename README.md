@@ -42,3 +42,29 @@ Việc "hoàn nguyên" một commit thường chỉ đơn giản là làm ngư�
 Vì vậy, hợp nhất vẫn tồn tại, và nó vẫn được coi là sự kết hợp giữa hai nhánh, và các hợp nhất sau này vẫn nhìn thấy hợp nhất đó như là trạng thái chia sẻ cuối cùng - và hoàn nguyên đưa vào sẽ không ảnh hưởng gì cả.
 
 Vì vậy, một "hoàn nguyên" hoàn nguyên lại những thay đổi dữ liệu, nhưng nó không phải là một "phục hồi" theo cách nó không hoàn nguyên tác động của một commit lên lịch sử kho chứa.
+
+
+Với tình huống như vậy, bạn muốn trước hết hoàn nguyên "hoàn nguyên trước đó", khiến lịch sử trông như sau:
+
+---o---o---o---M---x---x---W---x---Y (main)
+               /
+       ---A---B-------------------C---D (feat/wav-1)
+
+
+Tuong tu nhu:
+---o---o---o---M---x---x-------x-------*
+               /                       /
+       ---A---B-------------------C---D
+
+
+
+Cach 2
+ ---o---o---o---M---x---x---W---x---x
+               /                 \
+       ---A---B                   X' (squashed A, B, C, D)
+
+
+Conflict
+---o---o---o---M---x---x---W---x---x---Y---*
+               /                 \         /
+       ---A---B                   A'--B'--C'
