@@ -69,5 +69,5 @@ Conflict
                /                 \         /
        ---A---B                   A'--B'--C'
 
-A
+C
 B
