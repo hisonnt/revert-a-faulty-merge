@@ -16,8 +16,5 @@ Khi kiểm tra, chúng tôi phát hiện rằng các thay đổi mã nguồn đ�
 
 
 * Commit 1
-* * Commit 1a
-* * Commit 1b
-* * Commit 1d
 * Commit 2
 * Commit 3
